@@ -101,4 +101,20 @@ public class Laptop {
     public void setPrice(double price) {
         this.price = price;
     }
+
+    @Override
+    public String toString() {
+        return "Laptop{" +
+                "ID=" + ID +
+                ", brand='" + brand + '\'' +
+                ", model='" + model + '\'' +
+                ", CPU='" + CPU + '\'' +
+                ", RAM='" + RAM + '\'' +
+                ", GPU='" + GPU + '\'' +
+                ", SSD='" + SSD + '\'' +
+                ", HDD='" + HDD + '\'' +
+                ", price=" + price +
+                '}';
+    }
 }
+
