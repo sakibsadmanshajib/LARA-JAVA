@@ -1,5 +1,8 @@
 package com.LARA;
 
+import java.io.*;
+import java.util.ArrayList;
+
 public class Laptop {
 
     //Class Variables
@@ -104,17 +107,16 @@ public class Laptop {
 
     @Override
     public String toString() {
-        return "Laptop{" +
-                "ID=" + ID +
-                ", brand='" + brand + '\'' +
-                ", model='" + model + '\'' +
-                ", CPU='" + CPU + '\'' +
-                ", RAM='" + RAM + '\'' +
-                ", GPU='" + GPU + '\'' +
-                ", SSD='" + SSD + '\'' +
-                ", HDD='" + HDD + '\'' +
-                ", price=" + price +
-                '}';
+
+        String string = brand + " " + model + "| "
+                        + "CPU: " + CPU + "| "
+                        + "RAM: " + RAM + "| "
+                        + "GPU: " + GPU + "| "
+                        + "SSD: " + SSD + "| "
+                        + "HDD: " + HDD + "| "
+                        + "Price: " + price;
+
+        return string;
     }
 }
 

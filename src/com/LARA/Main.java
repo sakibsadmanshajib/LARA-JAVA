@@ -19,7 +19,6 @@ public class Main {
             br = new BufferedReader(new FileReader(fileName));
             while ((line = br.readLine()) != null) {
 
-                // use comma as separator
                 String[] in = line.split(cvsSplitBy);
 
                 Laptop lp = new Laptop(Integer.parseInt(in[0]), in[1], in[2], in[3], in[4], in[5], in[6], in[7], Double.parseDouble(in[8]));
@@ -69,26 +68,36 @@ public class Main {
         }
 
 
-        System.out.println("█▀▀▀▀▀▀▀▀▀▀▀▀▀█");
-        System.out.println("█░░╦─╦╔╗╦─╔╗╔╗╔╦╗╔╗░░█");
-        System.out.println("█░░║║║╠─║─║─║║║║║╠─░░█");
-        System.out.println("█░░╚╩╝╚╝╚╝╚╝╚╝╩─╩╚╝░░█");
-        System.out.println("▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀");
+        System.out.println("                            █▀▀▀▀▀▀▀▀▀▀▀▀▀█");
+        System.out.println("                            █░░╦─╦╔╗╦─╔╗╔╗╔╦╗╔╗░░█");
+        System.out.println("                            █░░║║║╠─║─║─║║║║║╠─░░█");
+        System.out.println("                            █░░╚╩╝╚╝╚╝╚╝╚╝╩─╩╚╝░░█");
+        System.out.println("                            ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀");
 
 
         System.out.println("Hey there! I have already imported the Laptops from the CSV database (for your convenience)."
                             + "\nLet's help you choose the best laptop with your preferences. Please answer the questions below.");
 
-        System.out.println("What is your budget?");
+        System.out.println("****************************************************");
+
+        System.out.print("What is your budget? Your response: ");
         Scanner input = new Scanner(System.in);
         double budget = input.nextDouble();
 
-        System.out.println("What are planning to buy? (Input the index only)" +
-                "\n1. Ultrabook/Netbook (Great for office/normal use, such as Word processing, web-browsing, photoshop, light-workload, optional thin&light etc.)" +
-                "\n2. Gaming/Workstation (Great for Gaming, heavy-workload, video-editing, 3D rendering, CPU/GPU intensive task." +
+        System.out.println("****************************************************");
+
+        System.out.print("What are planning to buy? (Input the index only)" +
+                "\n1. Ultrabook/Netbook (Great for office/normal use, such as Word processing, \n   web-browsing, photoshop, light-workload, optional thin&light etc.)" +
+                "\n2. Gaming/Workstation (Great for Gaming, heavy-workload, video-editing, \n   3D rendering, CPU/GPU intensive task." +
                 "\n3. Anyone would work just fine." +
                 "\nYour choice: ");
         int preference = input.nextInt();
+
+        System.out.println("****************************************************");
+
+        System.out.println("Here is the list of probable laptops you might buy. Have a look!");
+
+        System.out.println("****************************************************");
 
         if(preference == 1){
 
@@ -120,8 +129,10 @@ public class Main {
 
         }
 
+        else
+            System.out.println("Wrong Choice.");
 
-        //System.out.println(lp.toString());
+        System.out.println("****************************************************");
     }
 
 }
