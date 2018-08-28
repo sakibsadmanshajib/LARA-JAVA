@@ -3,6 +3,9 @@ package com.LARA;
 import java.io.*;
 import java.util.*;
 
+import java.time.format.DateTimeFormatter;
+import java.time.LocalDateTime;
+
 public class Main {
 
     public static ArrayList<Laptop> csv(String file) {
@@ -99,11 +102,23 @@ public class Main {
 
         System.out.println("****************************************************");
 
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+        LocalDateTime now = LocalDateTime.now();
+
         if(preference == 1){
 
             for(int i = 0; i < ult.size(); i++){
                 if((ult.get(i).getPrice() > (budget - 4999)) && (ult.get(i).getPrice() < (budget + 5000))){
+
                     System.out.println(ult.get(i).toString());
+
+                    try (PrintWriter out = new PrintWriter(new FileOutputStream(new File("output.txt"), true)))
+                    {
+                        out.println(dtf.format(now));
+                        out.println(ult.get(i).toString());
+                    } catch (IOException e) {
+                        System.out.print("Exception");
+                    }
                 }
             }
 
@@ -113,7 +128,16 @@ public class Main {
 
             for(int i = 0; i < wor.size(); i++){
                 if((wor.get(i).getPrice() > (budget - 4999)) && (wor.get(i).getPrice() < (budget + 5000))){
+
                     System.out.println(wor.get(i).toString());
+
+                    try (PrintWriter out = new PrintWriter(new FileOutputStream(new File("output.txt"), true)))
+                    {
+                        out.println(dtf.format(now));
+                        out.println(wor.get(i).toString());
+                    } catch (IOException e) {
+                        System.out.print("Exception");
+                    }
                 }
             }
 
@@ -123,7 +147,16 @@ public class Main {
 
             for(int i = 0; i < lp.size(); i++){
                 if((lp.get(i).getPrice() > (budget - 4999)) && (lp.get(i).getPrice() < (budget + 5000))){
+
                     System.out.println(lp.get(i).toString());
+
+                    try (PrintWriter out = new PrintWriter(new FileOutputStream(new File("output.txt"), true)))
+                    {
+                        out.println(dtf.format(now));
+                        out.println(lp.get(i).toString());
+                    } catch (IOException e) {
+                        System.out.print("Exception");
+                    }
                 }
             }
 
