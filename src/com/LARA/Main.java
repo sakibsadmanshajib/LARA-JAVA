@@ -114,7 +114,7 @@ public class Main {
 
                     try (PrintWriter out = new PrintWriter(new FileOutputStream(new File("output.txt"), true)))
                     {
-                        out.println(dtf.format(now));
+                        out.print(dtf.format(now) + " -- ");
                         out.println(ult.get(i).toString());
                     } catch (IOException e) {
                         System.out.print("Exception");
@@ -133,7 +133,7 @@ public class Main {
 
                     try (PrintWriter out = new PrintWriter(new FileOutputStream(new File("output.txt"), true)))
                     {
-                        out.println(dtf.format(now));
+                        out.print(dtf.format(now) + " -- ");
                         out.println(wor.get(i).toString());
                     } catch (IOException e) {
                         System.out.print("Exception");
@@ -152,7 +152,7 @@ public class Main {
 
                     try (PrintWriter out = new PrintWriter(new FileOutputStream(new File("output.txt"), true)))
                     {
-                        out.println(dtf.format(now));
+                        out.print(dtf.format(now) + " -- ");
                         out.println(lp.get(i).toString());
                     } catch (IOException e) {
                         System.out.print("Exception");
